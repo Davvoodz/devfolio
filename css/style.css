@@ -1,0 +1,400 @@
+html {
+  scroll-behavior: smooth;
+  scroll-padding: 5rem;
+}
+
+:root {
+  --dark-color: #1e1e1e;
+  --light-color: #4e4e4e;
+  --white-color: #ffffff;
+  --main-color: #0078ff;
+  --second-color: #cde1f8;
+  --transition: 0.5s all;
+}
+
+@font-face {
+  font-family: NotoSans;
+  src: url(../fonts/NotoSans.ttf) format(ttf),
+    url(../fonts/NotoSans.otf) format(otf),
+    url(../fonts/NotoSans.woff) format(woff),
+    url(../fonts/NotoSans.svg) format(svg);
+}
+
+body {
+  font-family: NotoSans;
+}
+
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--dark-color);
+}
+
+p {
+  color: var(--light-color);
+}
+
+.section-header .header-line {
+  width: 3rem;
+  height: 0.3rem;
+  margin: auto;
+  background-color: var(--main-color);
+}
+
+/* ====================== Home start ====================== */
+
+.navbar-brand {
+  color: var(--white-color);
+}
+
+.nav-list-div {
+  justify-content: end;
+}
+
+.navbar-toggler {
+  color: var(--white-color);
+}
+
+.nav-list-div .navbar-nav .nav-item a {
+  color: var(--white-color);
+  position: relative;
+  transition: var(--transition);
+}
+
+.nav-list-div ul li a::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0.15rem;
+  left: 0;
+  bottom: 0;
+  background-color: var(--white-color);
+  transition: var(--transition);
+}
+
+.nav-list-div .navbar-nav .nav-item a:hover {
+  color: var(--white-color);
+  background-color: black;
+}
+
+.nav-list-div .navbar-nav .nav-item a:hover::after {
+  width: 100%;
+}
+
+.dropdown-menu {
+  transition: var(--transition);
+}
+
+.dropdown:hover > .dropdown-menu {
+  display: block;
+  margin-top: 0;
+}
+
+.deep-drop-down:hover > .dropdown-menu {
+  display: block;
+  /* margin-top: 0; */
+}
+
+.dropdown-toggle::after {
+  border: 0;
+}
+
+.home-content {
+  color: var(--white-color);
+  min-height: 100vh;
+  background-image: url(../Images/hero-bg.jpg),
+    linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+h1 {
+  font-size: 4.5rem;
+}
+
+.animation span {
+  /* display: none; */
+  line-height: 36px;
+  font-size: 30px;
+  max-width: 0;
+  border-right: 2px solid var(--white-color);
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  opacity: 0;
+}
+
+.animation .developer {
+  animation: cycle 12s infinite;
+}
+
+.animation .designer {
+  animation: cycle 12s infinite 3s;
+}
+
+.animation .freelancer {
+  animation: cycle 12s infinite 6s;
+}
+
+.animation .photographer {
+  animation: cycle 12s infinite 9s;
+}
+
+@keyframes cycle {
+  0% {
+    max-width: 0;
+    opacity: 0;
+  }
+
+  1% {
+    max-width: 0;
+    opacity: 1;
+  }
+
+  12% {
+    max-width: 200px;
+    opacity: 1;
+  }
+
+  24% {
+    max-width: 0;
+    opacity: 1;
+  }
+
+  25% {
+    max-width: 0;
+    opacity: 0;
+  }
+
+  100% {
+    max-width: 0;
+    opacity: 0;
+  }
+}
+
+/* ====================== About start ====================== */
+
+#about {
+  padding-block: 3rem;
+}
+
+.about-img {
+  width: 90%;
+  margin: auto;
+}
+
+/* ====================== Services start ====================== */
+
+
+.services-card .icon-div {
+  width: 6.5rem;
+  height: 6.5rem;
+  margin: auto;
+  border: 0.7rem solid var(--main-color);
+}
+
+.services-card .icon-div i {
+  font-size: 2.5rem;
+}
+
+.services-card:hover .icon-div {
+  background-color: var(--main-color);
+  border-color: var(--second-color);
+}
+
+.services-card:hover .icon-div i {
+  color: var(--white-color);
+}
+
+/* ====================== Static start ====================== */
+
+#statics {
+  background-image: url(../Images/blog-3.jpg),
+    linear-gradient(var(--main-color), var(--main-color));
+  color: var(--white-color);
+  background-position: center;
+  background-size: cover;
+}
+
+.statics-card h3,
+.statics-card p {
+  color: var(--white-color);
+}
+
+.statics-card .icon-div {
+  width: 6.5rem;
+  height: 6.5rem;
+  margin: auto;
+  border: 0.7rem solid var(--white-color);
+}
+
+.statics-card .icon-div i {
+  font-size: 2.5rem;
+}
+
+/* ====================== Portfolio start ====================== */
+
+.port-card-text .port-card-f-span {
+  font-size: 1rem;
+  color: var(--main-color);
+}
+
+.port-card-text h5 {
+  margin-bottom: 0;
+}
+
+.port-card-text span {
+  font-size: 1rem;
+}
+
+.port-card-icon i {
+  font-size: 2.5rem;
+  color: var(--main-color);
+}
+
+.portfolio-card .portfolio-img img {
+  transition: var(--transition);
+}
+
+.portfolio-card:hover .portfolio-img img {
+  scale: 1.4;
+}
+
+/* ====================== Carousel start ====================== */
+
+#carousel {
+  background-image: url(../Images/overlay-bg.jpg),
+    linear-gradient(var(--main-color), var(--main-color));
+  color: var(--white-color);
+  background-position: center;
+  background-size: cover;
+}
+
+.caro-img img {
+  width: 3rem;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+/* ====================== Blog start ====================== */
+
+.card-lable {
+  padding: 0.2rem 0.8rem;
+  top: 0;
+  left: 50%;
+  background-color: var(--main-color);
+  color: var(--white-color);
+}
+
+.card-id-img img {
+  width: 2.5rem;
+  margin: 1rem;
+}
+
+/* ====================== contact start ====================== */
+
+#contact {
+  background-image: url(../Images/overlay-bg.jpg),
+    linear-gradient(var(--main-color), var(--main-color));
+  color: var(--white-color);
+  background-position: center;
+  background-size: cover;
+}
+
+
+.get-icon {
+  width: 3rem;
+  height: 3rem;
+  margin: auto;
+  border: 0.3rem solid var(--main-color);
+}
+
+.get-icon i {
+  font-size: 1.5rem;
+}
+
+
+.send h2::after {
+  content: "";
+  display: block;
+  width: 17rem;
+  height: 0.2rem;
+  left: 0;
+  right: 0;
+  margin: auto;
+  background-color: var(--main-color);
+}
+
+.get h2::after {
+  content: "";
+  display: block;
+  width: 12rem;
+  height: 0.2rem;
+  left: 0;
+  right: 0;
+  margin: auto;
+  background-color: var(--main-color);
+}
+
+.send input:focus,
+.send textarea:focus {
+  border: 0.3rem solid var(--second-color);
+  outline: var(--main-color);
+}
+
+.send input,
+.send textarea {
+  outline: var(--light-color);
+}
+
+.send textarea {
+  resize: vertical;
+}
+
+.send button {
+  background-color: var(--main-color);
+  color: var(--white-color);
+}
+
+.get {
+  color: var(--dark-color);
+}
+
+.get ul {
+  padding-left: 0;
+}
+
+.get ul li {
+  list-style: none;
+}
+
+.get ul li i {
+  list-style: none;
+  margin-right: 1rem;
+  margin-block: 1rem;
+  color: var(--main-color);
+}
+
+.get-icons i {
+  color: var(--dark-color);
+}
+
+/* ====================== Footer start ====================== */
+
+.page-footer {
+  background-color: #0062d3;
+}
+
+.page-footer p,
+.page-footer span,
+.page-footer a {
+  color: var(--white-color);
+  text-decoration: none;
+}
